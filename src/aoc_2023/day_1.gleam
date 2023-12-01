@@ -49,9 +49,7 @@ pub fn first_digit(input: String) -> Int {
     "seven" <> _ | "7" <> _ -> 7
     "eight" <> _ | "8" <> _ -> 8
     "nine" <> _ | "9" <> _ -> 9
-    _ -> {
-      first_digit(string.drop_left(input, 1))
-    }
+    _ -> first_digit(string.drop_left(input, 1))
   }
 }
 
@@ -67,8 +65,6 @@ pub fn last_digit(input: String) -> Int {
     "neves" <> _ | "7" <> _ -> 7
     "thgie" <> _ | "8" <> _ -> 8
     "enin" <> _ | "9" <> _ -> 9
-    _ -> {
-      last_digit(string.drop_right(input, 1))
-    }
+    _ -> last_digit(string.drop_right(input, 1))
   }
 }
