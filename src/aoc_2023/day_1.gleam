@@ -30,14 +30,14 @@ pub fn part_1(input: String) -> Int {
     let assert Ok(last) = list.last(lst)
     10 * first + last
   })
-  |> list.fold(0, fn(acc, x) { acc + x })
+  |> int.sum
 }
 
 pub fn part_2(input: String) -> Int {
   input
   |> string.split("\n")
   |> list.map(fn(str) { 10 * first_digit(str) + last_digit(str) })
-  |> list.fold(0, fn(acc, x) { acc + x })
+  |> int.sum
 }
 
 pub fn first_digit(input: String) -> Int {
