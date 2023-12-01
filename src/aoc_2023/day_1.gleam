@@ -6,12 +6,12 @@ import simplifile
 
 pub fn main() {
   let assert Ok(txt) = simplifile.read("./input/day_1/real.txt")
+
   txt
   |> part_1
   |> int.to_string
   |> io.println
 
-  let assert Ok(txt) = simplifile.read("./input/day_1/real.txt")
   txt
   |> part_2
   |> int.to_string
@@ -21,9 +21,11 @@ pub fn main() {
 pub fn part_1(input: String) -> Int {
   input
   |> string.split("\n")
-  |> list.map(string.to_graphemes)
-  |> list.map(list.filter_map(_, int.parse))
-  |> list.map(fn(lst) {
+  |> list.map(fn(str) {
+    let lst =
+      str
+      |> string.to_graphemes
+      |> list.filter_map(int.parse)
     let assert Ok(first) = list.first(lst)
     let assert Ok(last) = list.last(lst)
     10 * first + last
@@ -53,7 +55,6 @@ pub fn first_digit(input: String) -> Int {
   }
 }
 
-// 7pqrstsixteen
 pub fn last_digit(input: String) -> Int {
   case string.reverse(input) {
     "eno" <> _ | "1" <> _ -> 1
