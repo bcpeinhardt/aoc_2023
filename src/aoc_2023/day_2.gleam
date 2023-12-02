@@ -2,7 +2,6 @@ import gleam/io
 import gleam/string
 import gleam/list
 import gleam/int
-import gleam/result
 import simplifile
 
 pub fn main() {
