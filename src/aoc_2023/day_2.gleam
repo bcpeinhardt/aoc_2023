@@ -69,7 +69,7 @@ pub fn is_valid_count(input: MarbleCount) -> Bool {
 pub fn marble_count_from_round(round: String) -> MarbleCount {
   use acc, pull <- list.fold(string.split(round, ","), MarbleCount(0, 0, 0))
   let assert Ok(#(count, color)) = string.split_once(string.trim(pull), " ")
-  let assert Ok(n) = int.parse(string.trim(count))
+  let assert Ok(n) = int.parse(count)
   case color {
     "red" -> MarbleCount(..acc, red: acc.red + n)
     "green" -> MarbleCount(..acc, green: acc.green + n)
