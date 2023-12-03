@@ -50,11 +50,11 @@ pub fn part_2(input: String) -> Int {
   |> list.map(fn(ci) {
     let nums =
       grid
-      |> list.filter(fn(thingy) {
+      |> list.filter(fn(item) {
         ci
         |> get_adj_coords
         |> set.from_list
-        |> set.intersection(set.from_list(thingy.coord))
+        |> set.intersection(set.from_list(item.coord))
         |> set.size >= 1
       })
       |> list.filter(is_number)
